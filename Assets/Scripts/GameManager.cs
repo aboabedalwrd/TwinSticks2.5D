@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
 	public bool isRecording;
 	public bool playBackIsOver;
-	public GameObject secondCamera; 
+	public Camera secondCamera; 
 
 	void Start () {
 		playBackIsOver = false;
@@ -19,10 +19,10 @@ public class GameManager : MonoBehaviour {
 	void Update ()
 	{
 		if (CrossPlatformInputManager.GetButton ("Fire1") && !playBackIsOver) {
-			secondCamera.GetComponent<RawImage>().enabled = true;
+			secondCamera.depth = 0;
 			isRecording = false;
 		} else {
-			secondCamera.GetComponent<RawImage>().enabled = false;
+			secondCamera.depth = -2;
 			isRecording = true;
 		}
 	}
