@@ -33,6 +33,7 @@ public class Replay : MonoBehaviour {
 		if (rigidBody) {
 			rigidBody.isKinematic = false;
 		}
+
 		float time = Time.time;
 		print("Recording Frame " + recordFrame); 
 
@@ -46,6 +47,7 @@ public class Replay : MonoBehaviour {
 		if (rigidBody) {
 			rigidBody.isKinematic = true;
 		}
+
 		if (replayFrame < recordFrame) {
 			print ("PlayBack Frame " + replayFrame); 
 			transform.position = keyFrames [replayFrame].position;
